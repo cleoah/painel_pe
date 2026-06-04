@@ -8,17 +8,23 @@
 
 ## ⚠️ **ATENÇÃO - CREDENCIAIS NECESSÁRIAS ANTES DE EXECUTAR**
 
-> ### **🔴 É OBRIGATÓRIO se registrar no site do Copernicus para obter o USER (UID) que dá acesso aos dados do ERA5!**
+> ### **🔴 É OBRIGATÓRIO se registrar no site do Copernicus para obter o USER (UID)**
 >
-> **O USER não é o seu email! É uma sequência de letras e números aleatórios (ex: 345no3i45ho345o-lnoinbi-loinoaid9834)**
+> **O USER não é o seu email! É uma sequência de letras e números aleatórios (ex: 9eieoweomq-345f-4e56b-321f-123456789d)**
 >
-> **Passos para obter sua credencial:**
+> **⚠️ Importante: Você só precisa do USER (UID). NÃO precisa da API Key!**
+>
+> **Como obter seu USER (UID):**
 > 1. Acesse: **https://cds.climate.copernicus.eu/**
 > 2. Clique em "Sign in" e faça seu cadastro
 > 3. Após logado, vá em seu perfil (canto superior direito)
-> 4. Role até a seção **"API key"**
-> 5. Copie o **UID** (é uma string como `345no3i45ho345o-lnoinbi-loinoaid9834`)
-> 6. Use este UID no script `funcao/todas_as_funcoes.R` na variável `MEU_USER`
+> 4. O **UID** aparece no campo "User ID" ou na URL do seu perfil
+> 5. Copie o UID (exemplo: `9eieoweomq-345f-4e56b-321f-123456789d`)
+>
+> **Configuração no script:**
+> ```r
+> wf_set_key(user = "seu-uid-aqui")  # Apenas o USER, sem key!
+> ```
 >
 > **Sem este passo, o download dos dados do ERA5 NÃO funcionará!**
 
@@ -128,4 +134,142 @@ painel_pe/
 git clone https://github.com/seu-usuario/painel_pe.git
 cd painel_pe
 
+```
+### Depois de instalados todos os pacotes necessários
 
+## 1. Abrir o projeto
+    Abra o arquivo painel_pe.Rproj no RStudio
+    
+## 2. Configurar USER do Copernicus (OBRIGATÓRIO)
+    Abra o script todas_as_funcoes.R e configure o MEU_USER
+
+## 3. Atualizar base de dados (primeira execução)
+    abra o arquivo dados_pre.R
+   
+## 4. Executar o painel Shiny (pasta App_PE)
+    execute o runApp no script global.R 
+
+
+### 📊 Fluxo de Dados
+
+                        ┌─────────────────────────────────────┐
+                    │         dados_prep.R (ETL)          │
+                    └─────────────────────────────────────┘
+                                      │
+            ┌─────────────────────────┼─────────────────────────┐
+            ↓                         ↓                         ↓
+    ┌───────────────┐         ┌───────────────┐         ┌─────────────┐
+    │  funcao/      │         │  funcao/      │         │  funcao/    │
+    │  download_    │         │  processa-    │         │  previsao.R │
+    │  ano_era.R    │         │  mento_era.R  │         │             │
+    └───────┬───────┘         └───────┬───────┘         └──────┬──────┘
+            ↓                         ↓                         ↓
+    ┌───────────────────────────────────────────────────────────────┐
+    │                    todas_as_funcoes.R                         │
+    │                 (atualizar_dados - ERA5)                      │
+    └───────────────────────────────────────────────────────────────┘
+                                      ↓
+                            ┌─────────────────┐
+                            │  dados/         │
+                            │  brpedf.rda     │
+                            └────────┬────────┘
+                                      ↓
+                    ┌─────────────────┼─────────────────┐
+                    ↓                 ↓                 ↓
+            ┌───────────────┐  ┌─────────────┐  ┌─────────────┐
+            │  calculo_EHF  │  │  previsao   │  │  VERIFICAR  │
+            │      .R       │  │     .R      │  │  STATUS.R   │
+            └───────┬───────┘  └──────┬──────┘  └──────┬──────┘
+                    ↓                 ↓                 ↓
+                    └─────────────────┼─────────────────┘
+                                      ↓
+                            ┌─────────────────┐
+                            │    App_PE/      │
+                            │  global.R       │
+                            │  server.R       │
+                            │  ui.R           │
+                            └─────────────────┘
+                                      ↓
+                            ┌─────────────────┐
+                            │  Dashboard      │
+                            │  Interativo     │
+                            └─────────────────┘
+### 📄 Licença
+
+Distribuído sob licença MIT. Veja LICENSE para mais informações.
+
+### 🙏 Agradecimentos
+
+   # Copernicus Climate Change Service - Dados ERA5
+
+   # Open-Meteo - Previsões meteorológicas gratuitas
+
+   # Nairn & Fawcett (2013) - Metodologia EHF
+
+   # RStudio/Posit - Shiny Framework
+
+
+
+### 📜 Termos de Uso do Copernicus Climate Data Store (CDS)
+
+O Copernicus Climate Data Store (CDS) é operado pelo European Centre for Medium-Range Weather Forecasts (ECMWF) em nome da União Europeia (UE). O acesso ao CDS e todo o seu Conteúdo é regulado por estes Termos de Uso e pela Copernicus Data Protection and Privacy Statement:
+
+Artigo 1 - Descrição dos Produtos e Serviços
+
+O CDS contém informações geofísicas e outros conjuntos de dados ("Produtos") e aplicações para usuários ("Serviços"), conjuntamente referidos como "Conteúdo".
+
+Artigo 2 - Registro
+
+O download do Conteúdo requer registro prévio. Para se registrar, os usuários deverão fornecer os seguintes dados: Nome e sobrenome, um endereço de e-mail válido, país de residência e o setor em que trabalham. Os usuários podem optar por informar a organização que representam. O registro - e qualquer licença aceita sob ele - aplica-se apenas ao seu titular nomeado. Cada usuário só pode ter uma conta.
+
+Artigo 3 - Acesso
+
+O CDS ou qualquer de seu Conteúdo pode estar indisponível temporariamente para manutenção programada ou devido a circunstâncias imprevistas.
+
+Artigo 4 - Licenças
+
+O Conteúdo acessível através do CDS só pode ser usado sob os termos da licença atribuída a ele, conforme atualizada periodicamente pelos licenciadores.
+
+Artigo 5 - Sem Endosso
+
+Nenhum usuário pode representar ou implicar publicamente que o ECMWF e/ou a UE estão participando, patrocinando, aprovando ou endossando a forma ou propósito do uso ou reprodução de qualquer Conteúdo.
+
+Artigo 6 - Direito de Modificação
+
+O ECMWF reserva o direito de modificar estes Termos de Uso a qualquer momento. Quaisquer Termos de Uso revisados serão publicados no site do CDS. As modificações entrarão em vigor imediatamente após a publicação dos Termos de Uso revisados.
+
+Artigo 7 - Descontinuação e Rescisão
+
+O ECMWF reserva o direito, a qualquer momento, de modificar ou descontinuar, temporária ou permanentemente, o Conteúdo, bem como qualquer meio de acessá-lo ou utilizá-lo, a seu exclusivo critério, com ou sem aviso prévio aos usuários.
+
+O ECMWF pode, a seu exclusivo critério, sob quaisquer circunstâncias, por qualquer motivo ou sem motivo, e com ou sem aviso prévio aos usuários, suspender ou rescindir o acesso de qualquer usuário ao Conteúdo, particularmente em casos de violação destes Termos de Uso ou de quaisquer termos de licença aplicáveis.
+
+Artigo 8 - Exclusão de Responsabilidade e Garantias
+
+Exceto em casos de violações intencionais ou por negligência grave de seus funcionários ou representantes, ou reivindicações baseadas em lesão à vida, corpo ou saúde, nem o ECMWF nem a UE serão responsáveis perante qualquer usuário do CDS por qualquer perda ou dano de qualquer tipo incorrido em conexão com o uso do CDS.
+
+O ECMWF e/ou a UE também não serão responsáveis pela precisão, utilidade ou disponibilidade de qualquer Conteúdo.
+
+Qualquer Conteúdo disponibilizado para download ou uso através ou dentro do CDS é fornecido "como está" sem garantias adicionais de qualquer tipo, expressas ou implícitas, incluindo, mas não se limitando à qualidade, desempenho, comercialização ou adequação para um uso ou propósito específico. Sujeito ao exposto, nem o ECMWF nem a UE serão responsáveis por quaisquer danos, incluindo, mas não se limitando a danos diretos, indiretos, especiais, incidentais, punitivos, exemplares ou consequenciais decorrentes do uso ou da incapacidade de usar o Conteúdo.
+
+Nem o ECMWF nem a UE serão responsáveis e não aceitam representação ou responsabilidade pela funcionalidade ou conteúdo de sites externos, serviços ou produtos de software hiperligados a partir do CDS.
+
+O ECMWF e a UE se isentam de todas as garantias relacionadas ao fornecimento de Conteúdo através do CDS.
+
+Artigo 9 - Privilégios e Imunidades
+
+Nada nestes Termos de Uso ou relacionado a eles será considerado uma renúncia a quaisquer dos privilégios e imunidades do ECMWF e/ou da UE em conformidade com seus respectivos Protocolos sobre Privilégios e Imunidades.
+
+Artigo 10 - Resolução de Disputas
+
+Qualquer disputa entre o ECMWF e/ou a UE e partes interessadas decorrente ou relacionada ao uso do CDS ou seu Conteúdo será resolvida amigavelmente por negociação. Se a disputa não puder ser resolvida dessa forma, será finalmente resolvida sob as Regras de Arbitragem da Câmara de Comércio Internacional por três árbitros nomeados de acordo com as referidas regras, reunindo-se em Londres, Inglaterra. Os procedimentos serão em inglês. O direito de apelação por qualquer das partes perante qualquer tribunal nacional sobre uma questão de direito que surja no curso de qualquer procedimento arbitral ou de uma decisão proferida em qualquer procedimento arbitral fica, por meio deste, acordado como excluído.
+
+Artigo 11 - Proteção de Dados Pessoais
+
+A Copernicus Data Protection and Privacy Statement aplica-se a todos os dados pessoais fornecidos pelo usuário para se registrar.
+
+Artigo 12 - Divisibilidade
+
+Se qualquer disposição destes Termos de Uso for considerada inválida, ilegal ou de outra forma inexequível, tal inexequibilidade não afeta nenhuma outra disposição; os Termos de Uso devem então ser interpretados como se nunca tivessem contido a(s) disposição(ões) em questão e devem ser interpretados, na medida do possível, de forma a manter sua intenção original.
+
+Versão 1.2 (Março 2024)
