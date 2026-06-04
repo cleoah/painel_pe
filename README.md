@@ -195,6 +195,30 @@ cd painel_pe
                             │  Dashboard      │
                             │  Interativo     │
                             └─────────────────┘
+
+## ☁️ Compartilhar o Painel Online (Deploy)
+
+Para que outras pessoas possam acessar o painel pela internet sem precisar rodar o código no próprio computador, você pode publicá-lo no **shinyapps.io**.
+
+### 🚀 Passo a passo para publicar:
+
+1.  Acesse **[https://www.shinyapps.io](https://www.shinyapps.io)** e crie uma conta (gratuita para até 25 horas de uso mensal).
+2.  No RStudio, instale e configure o pacote `rsconnect`:
+    ```r
+    install.packages("rsconnect")
+    library(rsconnect)
+
+3.No site shinyapps.io, vá em Dashboard > Tokens e clique em Show para copiar o token e secret.
+
+4.No R, use o comando (substitua pelos seus dados):
+setAccountInfo(name="seu-usuario", token="SEU_TOKEN", secret="SEU_SECRET")
+
+5.Publique o aplicativo:
+deployApp("App_PE")
+
+## ⚠️ Importante: A versão gratuita tem limites de horas de processamento. Para uso contínuo, é necessário plano pago ou hospedar em servidor próprio.
+
+                            
 ### 📄 Licença
 
 Distribuído sob licença MIT. Veja LICENSE para mais informações.
