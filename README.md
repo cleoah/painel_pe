@@ -216,7 +216,7 @@ setAccountInfo(name="seu-usuario", token="SEU_TOKEN", secret="SEU_SECRET")
 5.Publique o aplicativo:
 deployApp("App_PE")
 
-## ⚠️ Importante: A versão gratuita tem limites de horas de processamento. Para uso contínuo, é necessário plano pago ou hospedar em servidor próprio.
+## ⚠️ Importante: A versão gratuita tem limites de horas de processamento (até 25 horas de uso mensal). Para uso contínuo, é necessário plano pago ou hospedar em servidor próprio.
 
                             
 ### 📄 Licença
