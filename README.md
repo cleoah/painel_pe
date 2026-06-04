@@ -200,13 +200,13 @@ Distribuído sob licença MIT. Veja LICENSE para mais informações.
 
 ### 🙏 Agradecimentos
 
-   # Copernicus Climate Change Service - Dados ERA5
+   #### Copernicus Climate Change Service - Dados ERA5
 
-   # Open-Meteo - Previsões meteorológicas gratuitas
+   #### Open-Meteo - Previsões meteorológicas gratuitas
 
-   # Nairn & Fawcett (2013) - Metodologia EHF
+   #### Nairn & Fawcett (2013) - Metodologia EHF
 
-   # RStudio/Posit - Shiny Framework
+   #### RStudio/Posit - Shiny Framework
 
 
 
