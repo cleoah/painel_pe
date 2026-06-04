@@ -6,7 +6,7 @@
 
 ## 📌 Sobre o Projeto
 
-O **PE Heat Monitor** é um painel interativo desenvolvido em **R/Shiny** para monitoramento de **calor extremo** nos municípios de Pernambuco. O sistema combina dados históricos de temperatura (ERA5) com previsões de curto prazo (Open-Meteo) para calcular o **Excesso de Calor (EHF - Excess Heat Factor)** e identificar eventos de calor extremo.
+O **painel_pe** é um painel interativo desenvolvido em **R/Shiny** para monitoramento de **calor extremo** nos municípios de Pernambuco. O sistema combina dados históricos de temperatura (ERA5) com previsões de curto prazo (Open-Meteo) para calcular o **Excesso de Calor (EHF - Excess Heat Factor)** e identificar eventos de calor extremo.
 
 ### 🎯 Funcionalidades
 
