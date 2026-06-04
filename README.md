@@ -145,10 +145,10 @@ cd painel_pe
     Abra o script todas_as_funcoes.R e configure o MEU_USER
 
 ## 4. Atualizar base de dados (primeira execução)
-    abra o arquivo dados_pre.R
+    abra o arquivo dados_pre.R e corra o script para atualização dos dados 
    
 ## 5. Executar o painel Shiny (pasta App_PE)
-    execute o runApp no script global.R 
+    execute o runApp no script global.R para visualização do painel na sua máquina 
 
 
 ### 📊 Fluxo de Dados
