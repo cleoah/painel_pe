@@ -135,18 +135,19 @@ git clone https://github.com/seu-usuario/painel_pe.git
 cd painel_pe
 
 ```
-### Depois de instalados todos os pacotes necessários
 
-## 1. Abrir o projeto
+## 2. Abrir o projeto
+   
     Abra o arquivo painel_pe.Rproj no RStudio
+    Instale todos os pacotes necessários
     
-## 2. Configurar USER do Copernicus (OBRIGATÓRIO)
+## 3. Configurar USER do Copernicus (OBRIGATÓRIO)
     Abra o script todas_as_funcoes.R e configure o MEU_USER
 
-## 3. Atualizar base de dados (primeira execução)
+## 4. Atualizar base de dados (primeira execução)
     abra o arquivo dados_pre.R
    
-## 4. Executar o painel Shiny (pasta App_PE)
+## 5. Executar o painel Shiny (pasta App_PE)
     execute o runApp no script global.R 
 
 
