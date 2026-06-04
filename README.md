@@ -216,14 +216,14 @@ setAccountInfo(name="seu-usuario", token="SEU_TOKEN", secret="SEU_SECRET")
 5.Publique o aplicativo:
 deployApp("App_PE")
 
-## ⚠️ Importante: A versão gratuita tem limites de horas de processamento (até 25 horas de uso mensal). Para uso contínuo, é necessário plano pago ou hospedar em servidor próprio.
+### ⚠️ Importante: A versão gratuita tem limites de horas de processamento (até 25 horas de uso mensal). Para uso contínuo, é necessário plano pago ou hospedar em servidor próprio.
 
                             
-### 📄 Licença
+## 📄 Licença
 
 Distribuído sob licença MIT. Veja LICENSE para mais informações.
 
-### 🙏 Agradecimentos
+## 🙏 Agradecimentos
 
    #### Copernicus Climate Change Service - Dados ERA5
 
@@ -235,7 +235,7 @@ Distribuído sob licença MIT. Veja LICENSE para mais informações.
 
 
 
-### 📜 Termos de Uso do Copernicus Climate Data Store (CDS)
+## 📜 Termos de Uso do Copernicus Climate Data Store (CDS)
 
 O Copernicus Climate Data Store (CDS) é operado pelo European Centre for Medium-Range Weather Forecasts (ECMWF) em nome da União Europeia (UE). O acesso ao CDS e todo o seu Conteúdo é regulado por estes Termos de Uso e pela Copernicus Data Protection and Privacy Statement:
 
