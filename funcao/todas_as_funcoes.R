@@ -6,7 +6,7 @@ library(ecmwfr)
 library(data.table)
 
 # CONFIGURAÇÃO (SUBSTITUA SEU USER)
-MEU_USER <- "91563859-801f-4a5b-982f-30fa99562d1f"
+MEU_USER <- ""
 pe_area <- c(-3, -44, -12, -30)
 
 # ============================================================
