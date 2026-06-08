@@ -26,7 +26,7 @@ atualizar_dados <- function(arquivo_base = "dados/brpedf.rda") {
  
  ultima_data <- max(x$dia, na.rm = TRUE)
  municipios <- unique(x$municipio)
- ultima_data_era5 <- as.Date("2026-05-30")  # Data máxima disponível
+ ultima_data_era5 <- Sys.Date() - 5  # Data máxima disponível
  
  message(paste("📅 Última data na base:", ultima_data))
  message(paste("📡 Última data disponível:", ultima_data_era5))

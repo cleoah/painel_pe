@@ -1,26 +1,26 @@
 {
-    "id": "A3001ABA",
-    "path": "~/GitHub/painel_pe/dados_prep.R",
-    "project_path": "dados_prep.R",
+    "id": "89D96EC5",
+    "path": "~/painel_pe/download_81_25_ERA_5.R",
+    "project_path": null,
     "type": "r_source",
-    "hash": "1012075165",
+    "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1780608758247.0,
+    "created": 1780916631434.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "27,42",
-        "scrollLine": "20"
+        "cursorPosition": "45,46",
+        "scrollLine": "37"
     },
     "folds": "",
-    "lastKnownWriteTime": 1780611333,
+    "lastKnownWriteTime": 1780770029,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1780611333054,
+    "last_content_update": 1780770029,
     "read_only": false,
     "read_only_alternatives": []
 }

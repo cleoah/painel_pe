@@ -1,26 +1,26 @@
 {
-    "id": "36553277",
-    "path": "~/GitHub/painel_pe/App_PE/global.R",
-    "project_path": "App_PE/global.R",
+    "id": "ECC56BF3",
+    "path": "~/GitHub/painel_pe/dados_prep.R",
+    "project_path": "dados_prep.R",
     "type": "r_source",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1780609737415.0,
+    "created": 1780770663917.0,
     "source_on_save": false,
-    "relative_order": 4,
+    "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "4,22",
-        "scrollLine": "0"
+        "cursorPosition": "30,0",
+        "scrollLine": "18"
     },
     "folds": "",
-    "lastKnownWriteTime": 1752365248,
+    "lastKnownWriteTime": 1780611333,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1752365248,
+    "last_content_update": 1780611333,
     "read_only": false,
     "read_only_alternatives": []
 }
