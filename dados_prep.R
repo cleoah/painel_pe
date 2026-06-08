@@ -31,7 +31,7 @@ resultado <- atualizar_dados("dados/brpedf.rda")
 era5_brdwgd<-resultado %>%
 dplyr::mutate(municipio=toupper(municipio)) 
 
-rio::export(era5_combined,"dados/brpedf.rda")
+rio::export(era5_brdwgd,"dados/brpedf.rda")
 
 #4.DADOS DE PREVISÃO####
 
@@ -93,7 +93,7 @@ final_data <- process_ehf_data(temporal)
 # 5.1 resultado final dos calculos####
 
 final<- final_data %>%
- dplyr::filter(year(Data)>=2023) %>%
+ dplyr::filter(year(Data)>=2025) %>%
  dplyr::mutate(Data = as.Date(Data))
 
 
